@@ -30,9 +30,10 @@ public class TransactionController {
 	@PostMapping("/makeTransaction")
 	public ResponseEntity<String> saveTransaction(@Valid @RequestBody Transaction transaction){
 		logger.info("saveTransaction");
+		logger.info("transaction : " + transaction);
 		
 		transactionService.saveTransaction(transaction);
-
+		logger.info("transaction : " + transaction);
 		return new ResponseEntity<String>("Transaction has been done", HttpStatus.OK);
 	}
 

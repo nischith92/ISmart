@@ -1,13 +1,10 @@
+com\ismart\exception\ErrorDetails.class
 com\ismart\IsmartApplication.class
 com\ismart\model\Customer.class
 com\ismart\swagger\SwaggerConfig.class
 com\ismart\exception\DefaultExceptionHandler.class
-META-INF\MANIFEST.MF
-META-INF\maven\com.ismart\Ismart\pom.properties
-com\ismart\model\Transaction.class
-com\ismart\repository\TransactionRepository.class
-com\ismart\exception\ErrorDetails.class
 com\ismart\controller\TransactionController.class
 com\ismart\service\TransactionServiceImpl.class
-META-INF\maven\com.ismart\Ismart\pom.xml
+com\ismart\model\Transaction.class
+com\ismart\repository\TransactionRepository.class
 com\ismart\service\TransactionService.class
