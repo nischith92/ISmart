@@ -1,59 +1,35 @@
 package com.ismart.model;
 
-public class Customer {
+import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Entity
+@Table(name="Customer")
+@Setter @Getter @NoArgsConstructor @ToString
+public class Customer implements Serializable {/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@JsonIgnore
 	private long customerId;
 	
 	private String customerName;
 	
 	private int accountBalance;
-	
-	/**
-	 * Getter Method For CustomerId
-	 * @return customerId
-	 */
-	public long getCustomerId() {
-		return customerId;
-	}
-	
-	/**
-	 * Setter Method For CustomerId
-	 * @param customerId
-	 */
-	public void setCustomerId(long customerId) {
-		this.customerId = customerId;
-	}
-	
-	/**
-	 * 
-	 * @return customerName
-	 */
-	public String getCustomerName() {
-		return customerName;
-	}
-	
-	/**
-	 * 
-	 * @param customerName
-	 */
-	public void setCustomerName(String customerName) {
-		this.customerName = customerName;
-	}
-	
-	/**
-	 * 
-	 * @return accountBalance
-	 */
-	public int getAccountBalance() {
-		return accountBalance;
-	}
-	
-	/**
-	 * 
-	 * @param accountBalance
-	 */
-	public void setAccountBalance(int accountBalance) {
-		this.accountBalance = accountBalance;
-	} 
 	
 }
