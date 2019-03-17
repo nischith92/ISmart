@@ -8,6 +8,6 @@ import com.ismart.model.Transaction;
 @Repository
 public interface TransactionRepository extends JpaRepository<Transaction, Integer>{
 
-	
+
 	
 }
