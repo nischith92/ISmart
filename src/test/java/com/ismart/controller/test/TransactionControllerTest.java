@@ -37,7 +37,7 @@ public class TransactionControllerTest {
 		transaction.setTransactionDescription("Test2");
 		transaction.setSpendCategory("Test2");
 		transaction.setDate(new Date());
-		ResponseEntity<String> transactionResponse = trxCtrl.saveTransaction(transaction);
+		ResponseEntity<Transaction> transactionResponse = trxCtrl.saveTransaction(transaction);
 		logger.info("transactionResponse====");
 		logger.info("transactionResponse===="+transactionResponse.getStatusCode());
 		logger.info("transactionResponse===="+transactionResponse.getBody());

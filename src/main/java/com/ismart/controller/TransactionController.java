@@ -21,20 +21,19 @@ import com.ismart.service.TransactionService;
 @CrossOrigin
 public class TransactionController {
 
-
 	Logger logger = LoggerFactory.getLogger(TransactionController.class);
 
 	@Autowired
 	TransactionService transactionService;
 
 	@PostMapping("/makeTransaction")
-	public ResponseEntity<String> saveTransaction(@Valid @RequestBody Transaction transaction){
+	public ResponseEntity<Transaction> saveTransaction(@Valid @RequestBody Transaction transaction){
 		logger.info("saveTransaction");
 		logger.info("transaction : " + transaction);
 		
-		transactionService.saveTransaction(transaction);
+		Transaction response = transactionService.saveTransaction(transaction);
 		logger.info("transaction : " + transaction);
-		return new ResponseEntity<String>("Transaction has been done", HttpStatus.OK);
+		return new ResponseEntity<Transaction>(response, HttpStatus.OK);
 	}
 
 
