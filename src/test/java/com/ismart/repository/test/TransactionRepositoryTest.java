@@ -27,21 +27,21 @@ public class TransactionRepositoryTest {
 	@Autowired
 	private TransactionRepository transactionRepository;
 	
-	@Test
-	public void saveTransaction() {
-		Transaction transaction = new Transaction();
-		transaction.setAmount(1000);
-		transaction.setCustomerId(101);
-		transaction.setPaymentType("CREDIT");
-		transaction.setTransactionId(101);
-		transaction.setTransactionDescription("Test");
-		transaction.setSpendCategory("Test");
-		transaction.setDate(new Date());
-		Transaction transactionResponse = transactionRepository.save(transaction);
-		
-//		assertThat(transactionResponse).isEqualTo(transaction);
-		assertNotNull(transactionResponse);
-	}
+//	@Test
+//	public void saveTransaction() {
+//		Transaction transaction = new Transaction();
+//		transaction.setAmount(1000);
+//		transaction.setCustomerId(101);
+//		transaction.setPaymentType("CREDIT");
+//		transaction.setTransactionId(101);
+//		transaction.setTransactionDescription("Test");
+//		transaction.setSpendCategory("Test");
+//		transaction.setDate(new Date());
+//		Transaction transactionResponse = transactionRepository.save(transaction);
+//		
+////		assertThat(transactionResponse).isEqualTo(transaction);
+////		assertNotNull(transactionResponse);
+//	}
 
 	
 }
