@@ -1,6 +1,13 @@
 package com.ismart.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,7 +21,7 @@ import com.ismart.repository.TransactionRepository;
 public class TransactionServiceImpl implements TransactionService {
 
 	@Autowired
-	TransactionRepository TrxRepository;
+	TransactionRepository transactionRepository;
 	
 	@Autowired
 	CustomerRepository customerRepository;
@@ -42,7 +49,18 @@ public class TransactionServiceImpl implements TransactionService {
 		
 		cust.setAccountBalance(amount);
 		customerRepository.save(cust);
-		return TrxRepository.save(transaction);
+		return transactionRepository.save(transaction);
+	}
+	public List<Transaction> findBySpendCategory(String spendCategory){
+	
+			List<Transaction> transactions = transactionRepository.findBySpendCategory(spendCategory);
+			
+			return transactions;
+	}
+
+	@Override
+	public Page<Transaction> listRecentTransaction(Pageable pageable) {
+		return transactionRepository.findAll(pageable);
 	}
 
 }
